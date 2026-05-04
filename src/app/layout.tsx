@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "GrantMap Canada — AI Grant Matching",
-  description: "AI-powered grant matching for Canadian small businesses",
+  description: "AI-powered grant matching for Canadian small businesses. Find SR&ED, CDAP, and 300+ federal & provincial programs.",
 };
 
 export default function RootLayout({
@@ -25,9 +25,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="bg-slate-950 text-slate-100">{children}</body>
     </html>
   );
 }
