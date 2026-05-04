@@ -1,0 +1,35 @@
+{
+  "id": "irie-ontario",
+  "name": "Indigenous Regional Innovation Entrepreneurship (IRIE)",
+  "jurisdiction": "ON",
+  "type": "grant",
+  "eligibilitySummary": "Ontario provincial program supporting Indigenous-led businesses and entrepreneurs through grants for business startup, growth, and innovation. Delivered in partnership with Indigenous financial institutions and community organizations.",
+  "eligibilityCriteria": {
+    "industries": ["all"],
+    "revenueMin": null,
+    "revenueMax": null,
+    "employeeMin": null,
+    "employeeMax": null,
+    "provinces": ["ON"],
+    "founderDemographics": ["indigenous"],
+    "rdRequired": false,
+    "exportRequired": false,
+    "startupOnly": false,
+    "yearsInOperationMax": null,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 5000,
+    "amountMax": 100000,
+    "description": "Grants from $5,000 to $100,000 for business startup, expansion, and innovation projects. Can cover equipment, working capital, training, and business planning costs."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "moderate",
+    "url": "https://www.ontario.ca/page/indigenous-entrepreneur-programs",
+    "requiredDocuments": ["Business plan", "Proof of Indigenous identity or community affiliation", "Financial projections", "Quotations for equipment or services"],
+    "applicationRequirements": "Must be an Indigenous entrepreneur or Indigenous-owned business based in Ontario. Must provide proof of Indigenous identity (First Nations, Metis, or Inuit). Business must be registered in Ontario."
+  },
+  "embedding": []
+}

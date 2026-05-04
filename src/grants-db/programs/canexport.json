@@ -1,0 +1,35 @@
+{
+  "id": "canexport",
+  "name": "CanExport",
+  "jurisdiction": "federal",
+  "type": "grant",
+  "eligibilitySummary": "Federal grant to help Canadian businesses expand into international markets by covering export-related costs such as trade shows, market research, and business travel. Administered by Global Affairs Canada.",
+  "eligibilityCriteria": {
+    "industries": ["all"],
+    "revenueMin": null,
+    "revenueMax": null,
+    "employeeMin": 1,
+    "employeeMax": 500,
+    "provinces": null,
+    "founderDemographics": [],
+    "rdRequired": false,
+    "exportRequired": true,
+    "startupOnly": false,
+    "yearsInOperationMax": null,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 3000,
+    "amountMax": 75000,
+    "description": "Up to 75% of eligible export development costs for SMEs. Funding ranges from $3,000 to $75,000 per project."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "moderate",
+    "url": "https://www.tradecommissioner.gc.ca/canexport/0012840.aspx",
+    "requiredDocuments": ["Business plan", "Export market plan", "Financial statements", "Proof of incorporation"],
+    "applicationRequirements": "Must be a registered Canadian business with at least 1 employee, operating for at least 1 year. Must demonstrate capacity to export and a concrete international market expansion plan."
+  },
+  "embedding": []
+}

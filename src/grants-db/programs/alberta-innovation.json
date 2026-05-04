@@ -1,0 +1,35 @@
+{
+  "id": "alberta-innovation",
+  "name": "Alberta Innovates",
+  "jurisdiction": "AB",
+  "type": "grant",
+  "eligibilitySummary": "Alberta's provincial innovation agency providing R&D funding and support for technology-driven companies. Covers applied research, prototype development, and technology validation projects across multiple sectors.",
+  "eligibilityCriteria": {
+    "industries": ["technology", "energy", "agriculture", "health", "forestry", "advanced_manufacturing"],
+    "revenueMin": null,
+    "revenueMax": null,
+    "employeeMin": 1,
+    "employeeMax": null,
+    "provinces": ["AB"],
+    "founderDemographics": [],
+    "rdRequired": true,
+    "exportRequired": false,
+    "startupOnly": false,
+    "yearsInOperationMax": null,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 50000,
+    "amountMax": 500000,
+    "description": "R&D grants ranging from $50,000 to $500,000. Funding covers up to 50% of eligible project costs including salaries, materials, and subcontractor fees for applied research and development."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "complex",
+    "url": "https://albertainnovates.ca/programs/",
+    "requiredDocuments": ["Project proposal", "Technical work plan", "Budget breakdown", "Financial statements", "Letters of support", "IP strategy"],
+    "applicationRequirements": "Must be an Alberta-based company or have significant Alberta operations. Project must demonstrate technological innovation with clear commercialization path. Requires matching funds from other sources."
+  },
+  "embedding": []
+}

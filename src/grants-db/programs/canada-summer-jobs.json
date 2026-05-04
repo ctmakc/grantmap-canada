@@ -1,0 +1,35 @@
+{
+  "id": "canada-summer-jobs",
+  "name": "Canada Summer Jobs",
+  "jurisdiction": "federal",
+  "type": "grant",
+  "eligibilitySummary": "Federal wage subsidy program providing funding to employers to create summer employment opportunities for students aged 15 to 30. Prioritizes jobs that serve local community needs and support priority groups including Indigenous youth, youth with disabilities, and racialized youth.",
+  "eligibilityCriteria": {
+    "industries": ["all"],
+    "revenueMin": null,
+    "revenueMax": null,
+    "employeeMin": null,
+    "employeeMax": null,
+    "provinces": null,
+    "founderDemographics": [],
+    "rdRequired": false,
+    "exportRequired": false,
+    "startupOnly": false,
+    "yearsInOperationMax": null,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 4000,
+    "amountMax": 20000,
+    "description": "Wage subsidy covering 50% of provincial/territorial minimum hourly wage for private sector employers, and up to 100% for non-profits and public sector. Funding per position typically ranges from $4,000 to $20,000 depending on hours and wage."
+  },
+  "application": {
+    "deadline": "2026-01-31",
+    "ongoing": false,
+    "complexity": "simple",
+    "url": "https://www.canada.ca/en/employment-social-development/services/funding/canada-summer-jobs.html",
+    "requiredDocuments": ["Employer application form", "Job descriptions", "Community impact statement", "Work schedule"],
+    "applicationRequirements": "Open to Canadian employers including businesses, non-profits, and public sector organizations. Positions must be full-time (30-40 hrs/week) for 6-16 weeks during summer. Employees must be students aged 15-30 returning to school."
+  },
+  "embedding": []
+}

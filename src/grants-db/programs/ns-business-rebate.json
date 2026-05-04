@@ -1,0 +1,35 @@
+{
+  "id": "ns-business-rebate",
+  "name": "Nova Scotia Business Rebate",
+  "jurisdiction": "NS",
+  "type": "grant",
+  "eligibilitySummary": "Nova Scotia provincial program providing rebates to small businesses for costs related to starting up, expanding, or improving operations. Covers eligible capital costs and operational improvements.",
+  "eligibilityCriteria": {
+    "industries": ["all"],
+    "revenueMin": null,
+    "revenueMax": 5000000,
+    "employeeMin": 1,
+    "employeeMax": 100,
+    "provinces": ["NS"],
+    "founderDemographics": [],
+    "rdRequired": false,
+    "exportRequired": false,
+    "startupOnly": false,
+    "yearsInOperationMax": null,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 2000,
+    "amountMax": 15000,
+    "description": "Rebate of up to $15,000 on eligible business costs including equipment, leasehold improvements, and technology adoption. Covers up to 25% of eligible project costs."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "simple",
+    "url": "https://novascotia.ca/econ/business-rebate/",
+    "requiredDocuments": ["Receipts and invoices", "Business registration", "Financial statements", "Project description"],
+    "applicationRequirements": "Must be a Nova Scotia-based small business with 1-100 employees and less than $5M in annual revenue. Must incur eligible costs before applying for rebate."
+  },
+  "embedding": []
+}

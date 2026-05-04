@@ -1,0 +1,35 @@
+{
+  "id": "bc-tech-pilot",
+  "name": "BC Tech Pilot",
+  "jurisdiction": "BC",
+  "type": "grant",
+  "eligibilitySummary": "British Columbia provincial grant for technology startups to accelerate commercialization of innovative products and services. Supports companies moving from prototype to market-ready with non-repayable funding.",
+  "eligibilityCriteria": {
+    "industries": ["technology", "cleantech", "digital_media", "life_sciences", "advanced_manufacturing"],
+    "revenueMin": null,
+    "revenueMax": 20000000,
+    "employeeMin": 1,
+    "employeeMax": 150,
+    "provinces": ["BC"],
+    "founderDemographics": [],
+    "rdRequired": true,
+    "exportRequired": false,
+    "startupOnly": false,
+    "yearsInOperationMax": 10,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 10000,
+    "amountMax": 75000,
+    "description": "Non-repayable grants from $10,000 to $75,000 covering up to 50% of eligible project costs for commercialization activities."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "moderate",
+    "url": "https://www.bctech.ca/programs/bc-tech-pilot/",
+    "requiredDocuments": ["Business plan", "Technology assessment", "Commercialization plan", "Financial projections", "Proof of BC incorporation"],
+    "applicationRequirements": "Must be a BC-based tech company with fewer than 150 employees, less than $20M revenue, and an innovative product or service ready for commercialization. Must demonstrate market validation and growth potential."
+  },
+  "embedding": []
+}

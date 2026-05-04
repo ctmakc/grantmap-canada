@@ -1,0 +1,35 @@
+{
+  "id": "ycb",
+  "name": "Young Canada Works",
+  "jurisdiction": "federal",
+  "type": "grant",
+  "eligibilitySummary": "Federal wage subsidy program helping employers create summer work opportunities for youth aged 16 to 30. Supports heritage, arts, cultural, and environmental organizations in hiring young Canadians.",
+  "eligibilityCriteria": {
+    "industries": ["heritage", "arts", "culture", "environment", "non_profit"],
+    "revenueMin": null,
+    "revenueMax": null,
+    "employeeMin": null,
+    "employeeMax": null,
+    "provinces": null,
+    "founderDemographics": [],
+    "rdRequired": false,
+    "exportRequired": false,
+    "startupOnly": false,
+    "yearsInOperationMax": null,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 5000,
+    "amountMax": 25000,
+    "description": "Wage subsidy covering 50-75% of wages for youth employees (ages 16-30). Maximum subsidy of $25,000 per position, with enhanced rates for organizations serving official language minority communities."
+  },
+  "application": {
+    "deadline": "2026-02-28",
+    "ongoing": false,
+    "complexity": "simple",
+    "url": "https://www.canada.ca/en/canadian-heritage/services/funding/young-canada-works.html",
+    "requiredDocuments": ["Employer registration", "Job description", "Work plan", "Budget for proposed positions"],
+    "applicationRequirements": "Must be a Canadian heritage, arts, cultural, or environmental organization. Positions must provide meaningful work experience for youth aged 16-30. Employers must contribute a minimum 25% of total wages."
+  },
+  "embedding": []
+}

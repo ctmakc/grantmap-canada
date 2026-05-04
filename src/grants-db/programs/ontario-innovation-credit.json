@@ -1,0 +1,26 @@
+{
+  "id": "ontario-innovation-credit",
+  "name": "Ontario Innovation Tax Credit (OITC)",
+  "jurisdiction": "ON",
+  "type": "tax_credit",
+  "eligibilitySummary": "Ontario tax credit for companies conducting R&D in Ontario. 8-12% refundable credit on eligible R&D expenditures. Must be Ontario-based corporation.",
+  "eligibilityCriteria": {
+    "provinces": ["ON"],
+    "rdRequired": true,
+    "industries": ["all"]
+  },
+  "funding": {
+    "amountMin": 2000,
+    "amountMax": 500000,
+    "description": "8% non-refundable or 12% refundable credit on eligible Ontario R&D expenditures"
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "moderate",
+    "url": "https://www.ontario.ca/page/ontario-innovation-tax-credit",
+    "requiredDocuments": ["Ontario tax return", "SR&ED claim", "Expenditure details"],
+    "applicationRequirements": "File with Ontario corporate tax return. Must have permanent establishment in Ontario and qualify for federal SR&ED."
+  },
+  "embedding": []
+}

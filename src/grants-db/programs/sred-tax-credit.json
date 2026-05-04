@@ -1,0 +1,25 @@
+{
+  "id": "sred-tax-credit",
+  "name": "Scientific Research and Experimental Development (SR&ED) Tax Credit",
+  "jurisdiction": "federal",
+  "type": "tax_credit",
+  "eligibilitySummary": "Tax credit for Canadian businesses conducting R&D. Covers eligible expenditures on scientific research and experimental development. Available to all sizes of businesses across Canada.",
+  "eligibilityCriteria": {
+    "rdRequired": true,
+    "industries": ["all"]
+  },
+  "funding": {
+    "amountMin": 5000,
+    "amountMax": 3000000,
+    "description": "15-35% of eligible R&D expenditures. Enhanced rate for CCPCs (Canadian-Controlled Private Corporations) on first $500K of expenditures."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "complex",
+    "url": "https://www.canada.ca/en/revenue-agency/services/scientific-research-experimental-development-tax-incentive-program.html",
+    "requiredDocuments": ["T661 form", "Financial statements", "Technical project description", "Supporting work documentation"],
+    "applicationRequirements": "File T661 with corporate tax return. Must demonstrate technological advancement, scientific uncertainty, and systematic investigation."
+  },
+  "embedding": []
+}

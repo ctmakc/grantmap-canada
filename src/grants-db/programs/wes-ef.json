@@ -1,0 +1,35 @@
+{
+  "id": "wes-ef",
+  "name": "Women Entrepreneurship Strategy Ecosystem Fund",
+  "jurisdiction": "federal",
+  "type": "grant",
+  "eligibilitySummary": "Federal fund supporting organizations that provide services and support to women entrepreneurs. Aims to build capacity in the women entrepreneurship ecosystem and remove systemic barriers to women starting and growing businesses.",
+  "eligibilityCriteria": {
+    "industries": ["all"],
+    "revenueMin": null,
+    "revenueMax": null,
+    "employeeMin": null,
+    "employeeMax": null,
+    "provinces": null,
+    "founderDemographics": ["women"],
+    "rdRequired": false,
+    "exportRequired": false,
+    "startupOnly": false,
+    "yearsInOperationMax": null,
+    "nonProfitOnly": true
+  },
+  "funding": {
+    "amountMin": 100000,
+    "amountMax": 3500000,
+    "description": "Ecosystem fund grants range from $100,000 to $3.5M for eligible organizations supporting women entrepreneurs. Individual business loans available through WES loan stream up to $50,000."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "complex",
+    "url": "https://www.ised-isde.canada.ca/site/women-entrepreneurship-strategy/en",
+    "requiredDocuments": ["Organization mandate documentation", "Project proposal", "Budget and work plan", "Partnership letters", "Past performance reports"],
+    "applicationRequirements": "Open to incorporated non-profits, charities, and Indigenous organizations delivering services to women entrepreneurs. Must demonstrate capacity to deliver programming at scale."
+  },
+  "embedding": []
+}

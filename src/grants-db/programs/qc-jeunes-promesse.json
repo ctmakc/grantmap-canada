@@ -1,0 +1,35 @@
+{
+  "id": "qc-jeunes-promesse",
+  "name": "Jeunes Promesse Quebec",
+  "jurisdiction": "QC",
+  "type": "grant",
+  "eligibilitySummary": "Quebec provincial program supporting young entrepreneurs under 39 to start or acquire a business. Provides financial assistance and mentoring for youth-led business projects across all sectors.",
+  "eligibilityCriteria": {
+    "industries": ["all"],
+    "revenueMin": null,
+    "revenueMax": null,
+    "employeeMin": null,
+    "employeeMax": null,
+    "provinces": ["QC"],
+    "founderDemographics": ["youth"],
+    "rdRequired": false,
+    "exportRequired": false,
+    "startupOnly": true,
+    "yearsInOperationMax": 2,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 5000,
+    "amountMax": 25000,
+    "description": "Non-repayable grants from $5,000 to $25,000 for business startup or acquisition costs. Additional mentoring and business support services provided through local CLDs."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "simple",
+    "url": "https://www.economie.gouv.qc.ca/programmes/jeunes-promesse/",
+    "requiredDocuments": ["Business plan", "Financial projections", "Proof of age (under 39)", "Proof of QC residency", "Registration with REQ"],
+    "applicationRequirements": "Applicant must be under 39 years old, a Quebec resident, and hold at least 50% ownership of the business. Must submit a viable business plan and demonstrate need for financial assistance."
+  },
+  "embedding": []
+}

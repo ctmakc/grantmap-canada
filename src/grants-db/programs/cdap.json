@@ -1,0 +1,26 @@
+{
+  "id": "cdap",
+  "name": "Canada Digital Adoption Program (CDAP)",
+  "jurisdiction": "federal",
+  "type": "grant",
+  "eligibilitySummary": "Grants for Canadian small businesses to adopt digital technologies. Provides funding for e-commerce, digital marketing, and technology implementation. For businesses with 1-99 employees.",
+  "eligibilityCriteria": {
+    "employeeMin": 1,
+    "employeeMax": 99,
+    "industries": ["all"]
+  },
+  "funding": {
+    "amountMin": 2500,
+    "amountMax": 15000,
+    "description": "Up to $2,500 for micro-grants for technology adoption; up to $15,000 for Boost Your Business Technology stream"
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "simple",
+    "url": "https://ised-isde.canada.ca/site/canada-digital-adoption-program",
+    "requiredDocuments": ["Business registration", "Revenue documentation", "Digital adoption plan"],
+    "applicationRequirements": "Must be a for-profit business registered in Canada with 1-99 employees and at least one year of operation."
+  },
+  "embedding": []
+}

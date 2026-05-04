@@ -1,0 +1,35 @@
+{
+  "id": "idea-ontario",
+  "name": "Invest in Digital Economy Agreement (IDEA)",
+  "jurisdiction": "ON",
+  "type": "grant",
+  "eligibilitySummary": "Ontario provincial program helping small and medium-sized businesses adopt digital technologies to grow and compete. Covers costs for digital transformation projects including e-commerce, digital marketing, CRM, and cybersecurity upgrades.",
+  "eligibilityCriteria": {
+    "industries": ["all"],
+    "revenueMin": null,
+    "revenueMax": 10000000,
+    "employeeMin": 1,
+    "employeeMax": 99,
+    "provinces": ["ON"],
+    "founderDemographics": [],
+    "rdRequired": false,
+    "exportRequired": false,
+    "startupOnly": false,
+    "yearsInOperationMax": null,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 2500,
+    "amountMax": 15000,
+    "description": "Grants from $2,500 to $15,000 covering up to 50% of eligible costs for digital technology adoption. Can fund e-commerce platforms, digital marketing, CRM systems, cybersecurity tools, and digital training."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "simple",
+    "url": "https://www.ontario.ca/page/digital-economy-program",
+    "requiredDocuments": ["Business registration", "Digital adoption plan", "Vendor quotes", "Financial statements"],
+    "applicationRequirements": "Must be an Ontario-based business with 1-99 employees and $10M or less in annual revenue. Must have a digital adoption plan and purchase digital technologies from an Ontario-based vendor. Business must be registered and operating in Ontario."
+  },
+  "embedding": []
+}

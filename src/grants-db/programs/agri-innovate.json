@@ -1,0 +1,35 @@
+{
+  "id": "agri-innovate",
+  "name": "AgriInnovate Program",
+  "jurisdiction": "federal",
+  "type": "grant",
+  "eligibilitySummary": "Federal program under the Canadian Agricultural Partnership providing funding for agricultural innovation and adoption of new technologies. Supports projects that enhance competitiveness, sustainability, and sector resilience in Canada's agriculture and agri-food sector.",
+  "eligibilityCriteria": {
+    "industries": ["agriculture", "agri_food", "agritech"],
+    "revenueMin": null,
+    "revenueMax": null,
+    "employeeMin": null,
+    "employeeMax": null,
+    "provinces": null,
+    "founderDemographics": [],
+    "rdRequired": true,
+    "exportRequired": false,
+    "startupOnly": false,
+    "yearsInOperationMax": null,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 50000,
+    "amountMax": 2000000,
+    "description": "Repayable and non-repayable contributions from $50,000 to $2M for innovation projects. Funding covers up to 50% of eligible costs for for-profit organizations and up to 75% for non-profits."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "complex",
+    "url": "https://agriculture.canada.ca/en/programs/agriinnovate-program",
+    "requiredDocuments": ["Project proposal", "Innovation assessment", "Detailed budget", "Environmental assessment", "Market analysis", "Letters of support from industry"],
+    "applicationRequirements": "Must be a Canadian for-profit or non-profit organization in the agriculture or agri-food sector. Project must demonstrate innovation that goes beyond current industry practice and has potential for broad sector benefit."
+  },
+  "embedding": []
+}

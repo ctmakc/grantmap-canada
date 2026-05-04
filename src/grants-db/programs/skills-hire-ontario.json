@@ -1,0 +1,35 @@
+{
+  "id": "skills-hire-ontario",
+  "name": "Skills Hire Ontario",
+  "jurisdiction": "ON",
+  "type": "grant",
+  "eligibilitySummary": "Ontario provincial hiring grant that helps employers train and hire workers by offsetting training and onboarding costs. Targets sectors facing skill shortages and supports both new hires and upskilling of existing staff.",
+  "eligibilityCriteria": {
+    "industries": ["manufacturing", "technology", "healthcare", "construction", "agriculture", "transportation"],
+    "revenueMin": null,
+    "revenueMax": null,
+    "employeeMin": 1,
+    "employeeMax": null,
+    "provinces": ["ON"],
+    "founderDemographics": [],
+    "rdRequired": false,
+    "exportRequired": false,
+    "startupOnly": false,
+    "yearsInOperationMax": null,
+    "nonProfitOnly": false
+  },
+  "funding": {
+    "amountMin": 5000,
+    "amountMax": 40000,
+    "description": "Up to $40,000 per trainee to cover training costs, wages during training period, and related expenses. Typically covers 50-80% of training and onboarding costs."
+  },
+  "application": {
+    "deadline": null,
+    "ongoing": true,
+    "complexity": "moderate",
+    "url": "https://www.ontario.ca/page/skills-development-fund",
+    "requiredDocuments": ["Training plan", "Job descriptions", "Employer registration", "Financial quotes for training", "Labour market assessment"],
+    "applicationRequirements": "Must be an Ontario employer in an eligible sector. Must demonstrate a skills gap and provide a detailed training plan. Positions must pay at least minimum wage and lead to sustained employment."
+  },
+  "embedding": []
+}
