@@ -49,7 +49,7 @@ export const aiUsage = sqliteTable("ai_usage", {
   id: text("id").primaryKey(),
   userId: text("user_id").notNull().references(() => users.id),
   stage: text("stage").notNull(),
-  provider: text("provider", { enum: ["anthropic", "openai", "google"] }).notNull(),
+  provider: text("provider", { enum: ["ollama", "anthropic", "openai", "google"] }).notNull(),
   model: text("model").notNull(),
   inputTokens: integer("input_tokens").notNull(),
   outputTokens: integer("output_tokens").notNull(),
