@@ -2,6 +2,9 @@ import fs from "fs";
 import path from "path";
 import { z } from "zod";
 
+// Handle null → undefined coercion for JSON data
+const nullToUndef = z.preprocess((v) => v ?? undefined, z.unknown());
+
 const GrantProgramSchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -9,18 +12,18 @@ const GrantProgramSchema = z.object({
   type: z.enum(["grant", "tax_credit", "loan", "subsidy", "voucher"]),
   eligibilitySummary: z.string(),
   eligibilityCriteria: z.object({
-    industries: z.array(z.string()).optional(),
-    revenueMin: z.number().optional(),
-    revenueMax: z.number().optional(),
-    employeeMin: z.number().optional(),
-    employeeMax: z.number().optional(),
-    provinces: z.array(z.string()).optional(),
-    founderDemographics: z.array(z.string()).optional(),
-    rdRequired: z.boolean().optional(),
-    exportRequired: z.boolean().optional(),
-    startupOnly: z.boolean().optional(),
-    yearsInOperationMax: z.number().optional(),
-    nonProfitOnly: z.boolean().optional(),
+    industries: z.array(z.string()).optional().default([]),
+    revenueMin: z.number().nullable().optional(),
+    revenueMax: z.number().nullable().optional(),
+    employeeMin: z.number().nullable().optional(),
+    employeeMax: z.number().nullable().optional(),
+    provinces: z.array(z.string()).nullable().optional(),
+    founderDemographics: z.array(z.string()).optional().default([]),
+    rdRequired: z.boolean().optional().default(false),
+    exportRequired: z.boolean().optional().default(false),
+    startupOnly: z.boolean().optional().default(false),
+    yearsInOperationMax: z.number().nullable().optional(),
+    nonProfitOnly: z.boolean().optional().default(false),
   }),
   funding: z.object({
     amountMin: z.number(),
@@ -35,7 +38,7 @@ const GrantProgramSchema = z.object({
     requiredDocuments: z.array(z.string()),
     applicationRequirements: z.string().optional(),
   }),
-  embedding: z.array(z.number()),
+  embedding: z.array(z.number()).default([]),
 });
 
 export type GrantProgram = z.infer<typeof GrantProgramSchema>;
