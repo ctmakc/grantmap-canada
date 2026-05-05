@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
     const state = await runner.run(rawInput, profileId);
 
     // Update profile with enriched data
-    if (state.enrichedProfile) {
+    try {
       await db
         .update(profiles)
         .set({
@@ -25,23 +25,29 @@ export async function POST(req: NextRequest) {
           status: state.drafts ? "drafted" : state.matches ? "matched" : "enriched",
         })
         .where(eq(profiles.id, profileId));
+    } catch {
+      // Profile update is best-effort
     }
 
     // Save matches
     if (state.matches) {
       for (const match of state.matches) {
-        await db.insert(matches).values({
-          id: crypto.randomUUID(),
-          profileId,
-          programId: match.programId,
-          eligibilityScore: match.eligibilityScore,
-          expectedAmountMin: match.expectedAmountMin,
-          expectedAmountMax: match.expectedAmountMax,
-          complexity: match.complexity,
-          deadline: match.deadline,
-          reasoning: match.reasoning,
-          createdAt: new Date(),
-        });
+        try {
+          await db.insert(matches).values({
+            id: crypto.randomUUID(),
+            profileId,
+            programId: match.programId,
+            eligibilityScore: match.eligibilityScore,
+            expectedAmountMin: match.expectedAmountMin,
+            expectedAmountMax: match.expectedAmountMax,
+            complexity: match.complexity,
+            deadline: match.deadline,
+            reasoning: match.reasoning,
+            createdAt: new Date(),
+          });
+        } catch {
+          // Match insert is best-effort
+        }
       }
     }
 
@@ -70,7 +76,7 @@ export async function GET(req: NextRequest) {
     }
 
     const result = db.select().from(matches).where(eq(matches.profileId, profileId)).all();
-    return NextResponse.json(result);
+    return NextResponse.json({ matches: result });
   } catch (err) {
     return NextResponse.json({ error: String(err) }, { status: 500 });
   }

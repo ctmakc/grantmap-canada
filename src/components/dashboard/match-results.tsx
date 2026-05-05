@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 interface Match {
   id: string;
@@ -34,34 +34,79 @@ export function MatchResults({ profileId }: MatchResultsProps) {
   const [matches, setMatches] = useState<Match[]>([]);
   const [drafts, setDrafts] = useState<Draft[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [expandedMatch, setExpandedMatch] = useState<string | null>(null);
   const [showDraft, setShowDraft] = useState<string | null>(null);
+  const [pollCount, setPollCount] = useState(0);
 
-  useEffect(() => {
-    async function fetchResults() {
-      try {
-        const res = await fetch(`/api/matches?profileId=${profileId}`);
-        const data = await res.json();
-        setMatches(data.matches || []);
-        setDrafts(data.drafts || []);
-      } catch (err) {
-        console.error("Failed:", err);
-      } finally {
+  const fetchResults = useCallback(async () => {
+    try {
+      const res = await fetch(`/api/matches?profileId=${profileId}`);
+      const data = await res.json();
+      if (data.error) {
+        setError(data.error);
+        setLoading(false);
+        return;
+      }
+      const matchList = data.matches || data || [];
+      if (Array.isArray(matchList) && matchList.length > 0) {
+        setMatches(matchList);
+        const draftList = data.drafts || [];
+        if (Array.isArray(draftList) && draftList.length > 0) {
+          setDrafts(draftList);
+        }
         setLoading(false);
       }
+    } catch (err) {
+      setError(String(err));
+      setLoading(false);
     }
-    const poll = setInterval(fetchResults, 3000);
-    fetchResults();
-    return () => clearInterval(poll);
   }, [profileId]);
+
+  useEffect(() => {
+    if (!profileId) return;
+    setLoading(true);
+    setError(null);
+    setPollCount(0);
+    setMatches([]);
+    setDrafts([]);
+
+    const interval = setInterval(() => {
+      setPollCount((c) => {
+        if (c >= 40) {
+          // 2 minutes timeout
+          clearInterval(interval);
+          setLoading(false);
+          setError("Pipeline timed out. Try the Quiz tab for faster results.");
+          return c + 1;
+        }
+        fetchResults();
+        return c + 1;
+      });
+    }, 3000);
+
+    fetchResults();
+    return () => clearInterval(interval);
+  }, [profileId, fetchResults]);
+
+  if (error) {
+    return (
+      <div className="glass rounded-2xl p-6 text-center">
+        <div className="text-rose-400 text-sm mb-3">{error}</div>
+        <p className="text-slate-500 text-xs">The full pipeline can take 30-120 seconds. Try the Quiz tab for instant results.</p>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center py-16 glass rounded-2xl">
         <div className="relative">
-          <div className="w-12 h-12 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
+          <div className="w-14 h-14 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
+          <div className="absolute inset-0 w-14 h-14 border-2 border-violet-500/20 border-b-violet-500 rounded-full animate-spin" style={{ animationDirection: "reverse", animationDuration: "1.5s" }} />
         </div>
         <span className="mt-4 text-sm text-slate-400">Running 4-stage AI pipeline...</span>
+        <span className="mt-1 text-xs text-slate-600">This can take 30-120 seconds with local AI</span>
       </div>
     );
   }

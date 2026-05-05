@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/db/client";
-import { profiles, clients } from "@/lib/db/schema";
+import { profiles } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { clientId, rawData } = body;
+    const { rawData } = body;
 
-    if (!clientId || !rawData) {
-      return NextResponse.json({ error: "clientId and rawData required" }, { status: 400 });
+    if (!rawData) {
+      return NextResponse.json({ error: "rawData required" }, { status: 400 });
     }
 
     const db = getDb();
@@ -17,7 +17,6 @@ export async function POST(req: NextRequest) {
 
     await db.insert(profiles).values({
       id: profileId,
-      clientId,
       rawData,
       structuredProfile: null,
       status: "raw",

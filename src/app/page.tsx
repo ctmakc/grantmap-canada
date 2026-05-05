@@ -93,7 +93,7 @@ export default function Home() {
             <div className="glass rounded-2xl p-6 glow-brand">
               <h3 className="text-lg font-semibold text-white mb-1">Company Profile</h3>
               <p className="text-sm text-slate-400 mb-6">4-stage AI pipeline: parse → retrieve → score → draft</p>
-              <ProfileForm clientId="demo-client" onComplete={(id) => setProfileId(id)} />
+              <ProfileForm onComplete={(id) => setProfileId(id)} />
             </div>
             <div>
               {profileId ? (

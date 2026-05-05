@@ -3,12 +3,12 @@
 import { useState } from "react";
 
 interface ProfileFormProps {
-  clientId: string;
   onComplete?: (profileId: string) => void;
 }
 
-export function ProfileForm({ clientId, onComplete }: ProfileFormProps) {
+export function ProfileForm({ onComplete }: ProfileFormProps) {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     companyName: "",
     industry: "",
@@ -42,16 +42,21 @@ export function ProfileForm({ clientId, onComplete }: ProfileFormProps) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
+    setError(null);
     try {
       const res = await fetch("/api/profiles", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ clientId, rawData: form }),
+        body: JSON.stringify({ rawData: form }),
       });
       const data = await res.json();
-      onComplete?.(data.profileId);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        onComplete?.(data.profileId);
+      }
     } catch (err) {
-      console.error("Failed:", err);
+      setError(String(err));
     } finally {
       setLoading(false);
     }
@@ -71,6 +76,11 @@ export function ProfileForm({ clientId, onComplete }: ProfileFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {error && (
+        <div className="bg-rose-500/10 border border-rose-500/20 rounded-xl p-3 text-sm text-rose-400">
+          {error}
+        </div>
+      )}
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label className={labelCls}>Company Name</label>
@@ -149,7 +159,7 @@ export function ProfileForm({ clientId, onComplete }: ProfileFormProps) {
         {loading ? (
           <span className="flex items-center justify-center gap-2">
             <span className="animate-spin h-4 w-4 border-2 border-white/30 border-t-white rounded-full" />
-            Analyzing...
+            Running AI pipeline (30-60s)...
           </span>
         ) : "Find Matching Grants"}
       </button>

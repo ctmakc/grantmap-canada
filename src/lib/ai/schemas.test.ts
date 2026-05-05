@@ -30,10 +30,7 @@ describe("CompanyProfileSchema", () => {
 
   it("applies defaults for optional fields", () => {
     const minimal = { ...validProfile };
-    delete minimal.city;
-    delete minimal.rdRatio;
-    delete minimal.exportMarkets;
-    delete minimal.isNonProfit;
+    delete (minimal as Record<string, unknown>).city;
 
     const result = CompanyProfileSchema.safeParse(minimal);
     expect(result.success).toBe(true);

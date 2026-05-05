@@ -10,7 +10,7 @@ export const users = sqliteTable("users", {
 
 export const clients = sqliteTable("clients", {
   id: text("id").primaryKey(),
-  userId: text("user_id").notNull().references(() => users.id),
+  userId: text("user_id"),
   name: text("name").notNull(),
   companyName: text("company_name").notNull(),
   createdAt: integer("created_at", { mode: "timestamp" }).notNull().$defaultFn(() => new Date()),
@@ -18,7 +18,7 @@ export const clients = sqliteTable("clients", {
 
 export const profiles = sqliteTable("profiles", {
   id: text("id").primaryKey(),
-  clientId: text("client_id").notNull().references(() => clients.id),
+  clientId: text("client_id"),
   rawData: text("raw_data", { mode: "json" }).notNull(),
   structuredProfile: text("structured_profile", { mode: "json" }),
   status: text("status", { enum: ["raw", "enriched", "matched", "drafted"] }).notNull().default("raw"),
@@ -27,7 +27,7 @@ export const profiles = sqliteTable("profiles", {
 
 export const matches = sqliteTable("matches", {
   id: text("id").primaryKey(),
-  profileId: text("profile_id").notNull().references(() => profiles.id),
+  profileId: text("profile_id"),
   programId: text("program_id").notNull(),
   eligibilityScore: integer("eligibility_score").notNull(),
   expectedAmountMin: integer("expected_amount_min").notNull(),
@@ -40,14 +40,14 @@ export const matches = sqliteTable("matches", {
 
 export const drafts = sqliteTable("drafts", {
   id: text("id").primaryKey(),
-  matchId: text("match_id").notNull().references(() => matches.id),
+  matchId: text("match_id"),
   sectionsJson: text("sections_json", { mode: "json" }).notNull(),
   createdAt: integer("created_at", { mode: "timestamp" }).notNull().$defaultFn(() => new Date()),
 });
 
 export const aiUsage = sqliteTable("ai_usage", {
   id: text("id").primaryKey(),
-  userId: text("user_id").notNull().references(() => users.id),
+  userId: text("user_id"),
   stage: text("stage").notNull(),
   provider: text("provider", { enum: ["ollama", "anthropic", "openai", "google"] }).notNull(),
   model: text("model").notNull(),
