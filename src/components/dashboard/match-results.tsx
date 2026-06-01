@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 interface Match {
   id: string;
@@ -37,7 +37,7 @@ export function MatchResults({ profileId }: MatchResultsProps) {
   const [error, setError] = useState<string | null>(null);
   const [expandedMatch, setExpandedMatch] = useState<string | null>(null);
   const [showDraft, setShowDraft] = useState<string | null>(null);
-  const [pollCount, setPollCount] = useState(0);
+  const pollCountRef = useRef(0);
 
   const fetchResults = useCallback(async () => {
     try {
@@ -65,24 +65,25 @@ export function MatchResults({ profileId }: MatchResultsProps) {
 
   useEffect(() => {
     if (!profileId) return;
+    pollCountRef.current = 0;
+    // Reset state when the selected profile changes, then begin polling the
+    // pipeline. These synchronous resets are intentional (keyed off profileId).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     setError(null);
-    setPollCount(0);
     setMatches([]);
     setDrafts([]);
 
     const interval = setInterval(() => {
-      setPollCount((c) => {
-        if (c >= 40) {
-          // 2 minutes timeout
-          clearInterval(interval);
-          setLoading(false);
-          setError("Pipeline timed out. Try the Quiz tab for faster results.");
-          return c + 1;
-        }
-        fetchResults();
-        return c + 1;
-      });
+      pollCountRef.current += 1;
+      if (pollCountRef.current >= 40) {
+        // 2 minutes timeout
+        clearInterval(interval);
+        setLoading(false);
+        setError("Pipeline timed out. Try the Quiz tab for faster results.");
+        return;
+      }
+      fetchResults();
     }, 3000);
 
     fetchResults();

@@ -8,6 +8,9 @@ vi.mock("../db/client", () => ({
   })),
 }));
 
+// Typed view onto the private method under test.
+type GatewayWithPrivates = { pseudoEmbed(text: string): number[] };
+
 describe("AIGateway", () => {
   let gateway: AIGateway;
 
@@ -18,7 +21,7 @@ describe("AIGateway", () => {
   describe("pseudoEmbed", () => {
     it("produces a 256-dimensional normalized vector", () => {
       // Access private method via any for testing
-      const gatewayAny = gateway as any;
+      const gatewayAny = gateway as unknown as GatewayWithPrivates;
       const vec = gatewayAny.pseudoEmbed("hello world test");
       expect(vec.length).toBe(256);
       const norm = Math.sqrt(vec.reduce((s: number, v: number) => s + v * v, 0));
@@ -26,14 +29,14 @@ describe("AIGateway", () => {
     });
 
     it("is deterministic for same input", () => {
-      const gatewayAny = gateway as any;
+      const gatewayAny = gateway as unknown as GatewayWithPrivates;
       const a = gatewayAny.pseudoEmbed("Ontario tech startup");
       const b = gatewayAny.pseudoEmbed("Ontario tech startup");
       expect(a).toEqual(b);
     });
 
     it("produces different vectors for different inputs", () => {
-      const gatewayAny = gateway as any;
+      const gatewayAny = gateway as unknown as GatewayWithPrivates;
       const a = gatewayAny.pseudoEmbed("technology company");
       const b = gatewayAny.pseudoEmbed("agriculture farm");
       let dot = 0;
@@ -43,7 +46,7 @@ describe("AIGateway", () => {
     });
 
     it("handles empty string", () => {
-      const gatewayAny = gateway as any;
+      const gatewayAny = gateway as unknown as GatewayWithPrivates;
       const vec = gatewayAny.pseudoEmbed("");
       expect(vec.length).toBe(256);
       // Zero vector normalizes to zero

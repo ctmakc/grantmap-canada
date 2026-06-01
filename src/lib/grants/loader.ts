@@ -2,9 +2,6 @@ import fs from "fs";
 import path from "path";
 import { z } from "zod";
 
-// Handle null → undefined coercion for JSON data
-const nullToUndef = z.preprocess((v) => v ?? undefined, z.unknown());
-
 const GrantProgramSchema = z.object({
   id: z.string(),
   name: z.string(),

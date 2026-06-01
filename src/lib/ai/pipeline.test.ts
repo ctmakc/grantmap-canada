@@ -5,7 +5,10 @@ import { cosineSimilarity } from "../grants/embeddings";
 // Mock the AI gateway to avoid real API calls
 vi.mock("./gateway", () => {
   return {
-    AIGateway: vi.fn().mockImplementation(function (this: any) {
+    AIGateway: vi.fn().mockImplementation(function (this: {
+      generateObject: ReturnType<typeof vi.fn>;
+      generateEmbedding: ReturnType<typeof vi.fn>;
+    }) {
       this.generateObject = vi.fn();
       this.generateEmbedding = vi.fn();
     }),
