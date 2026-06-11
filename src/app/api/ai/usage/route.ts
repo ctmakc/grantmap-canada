@@ -7,21 +7,19 @@ export async function GET() {
   try {
     const db = getDb();
 
-    const recent = db
+    const recent = await db
       .select()
       .from(aiUsage)
       .orderBy(desc(aiUsage.createdAt))
-      .limit(100)
-      .all();
+      .limit(100);
 
-    const totalCost = db
+    const totalCost = await db
       .select({
         totalCostCents: sql<number>`sum(${aiUsage.costCents})`,
         totalInputTokens: sql<number>`sum(${aiUsage.inputTokens})`,
         totalOutputTokens: sql<number>`sum(${aiUsage.outputTokens})`,
       })
-      .from(aiUsage)
-      .all();
+      .from(aiUsage);
 
     return NextResponse.json({
       recent,

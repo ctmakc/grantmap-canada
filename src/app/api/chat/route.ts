@@ -1,16 +1,48 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createOpenAI } from "@ai-sdk/openai";
-import { streamText } from "ai";
+import { createAnthropic } from "@ai-sdk/anthropic";
+import { createGoogleGenerativeAI } from "@ai-sdk/google";
+import { streamText, type LanguageModel } from "ai";
 
 const OLLAMA_BASE_URL = process.env.OLLAMA_BASE_URL ?? "http://localhost:11434";
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL ?? "qwen2.5:latest";
 
+function getChatModel(): LanguageModel {
+  const provider = process.env.AI_PROVIDER;
+
+  // Explicit override
+  if (provider === "anthropic" && process.env.ANTHROPIC_API_KEY) {
+    return createAnthropic({ apiKey: process.env.ANTHROPIC_API_KEY })("claude-haiku-4-20250514");
+  }
+  if (provider === "google" && process.env.GEMINI_API_KEY) {
+    return createGoogleGenerativeAI({ apiKey: process.env.GEMINI_API_KEY })("gemini-2.0-flash");
+  }
+  if (provider === "openai" && process.env.OPENAI_API_KEY) {
+    return createOpenAI({ apiKey: process.env.OPENAI_API_KEY })("gpt-4o-mini");
+  }
+
+  // Auto-detect: Ollama first, then cloud providers
+  if (process.env.OLLAMA_BASE_URL) {
+    return createOpenAI({ baseURL: `${OLLAMA_BASE_URL}/v1`, apiKey: "ollama" })(OLLAMA_MODEL);
+  }
+  if (process.env.OPENAI_API_KEY) {
+    return createOpenAI({ apiKey: process.env.OPENAI_API_KEY })("gpt-4o-mini");
+  }
+  if (process.env.ANTHROPIC_API_KEY) {
+    return createAnthropic({ apiKey: process.env.ANTHROPIC_API_KEY })("claude-haiku-4-20250514");
+  }
+  if (process.env.GEMINI_API_KEY) {
+    return createGoogleGenerativeAI({ apiKey: process.env.GEMINI_API_KEY })("gemini-2.0-flash");
+  }
+
+  // Last resort fallback to Ollama (will fail with a clear error if not running)
+  return createOpenAI({ baseURL: `${OLLAMA_BASE_URL}/v1`, apiKey: "ollama" })(OLLAMA_MODEL);
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
-
-    const ollama = createOpenAI({ baseURL: `${OLLAMA_BASE_URL}/v1`, apiKey: "ollama" });
-    const model = ollama(OLLAMA_MODEL);
+    const model = getChatModel();
 
     const result = streamText({
       model,

@@ -8,6 +8,21 @@ import { aiUsage } from "../db/schema";
 
 type Provider = "ollama" | "anthropic" | "openai" | "google";
 
+// Determine whether Ollama is actually configured/available
+const isOllamaConfigured = Boolean(process.env.OLLAMA_BASE_URL);
+
+// Pick the best default provider based on available env vars
+function getDefaultProvider(): Provider {
+  if (isOllamaConfigured) return "ollama";
+  if (process.env.OPENAI_API_KEY) return "openai";
+  if (process.env.ANTHROPIC_API_KEY) return "anthropic";
+  if (process.env.GEMINI_API_KEY) return "google";
+  return "openai"; // Will fail gracefully with a clear error
+}
+
+const DEFAULT_PROVIDER: Provider =
+  (process.env.AI_PROVIDER as Provider | undefined) ?? getDefaultProvider();
+
 interface GatewayOptions {
   preferredProvider?: Provider;
   fallbackChain?: Provider[];
@@ -56,7 +71,7 @@ export class AIGateway {
     prompt: string,
     options?: GatewayOptions
   ): Promise<T> {
-    const preferred = options?.preferredProvider ?? "ollama";
+    const preferred = options?.preferredProvider ?? DEFAULT_PROVIDER;
     const chain = options?.fallbackChain ?? [preferred, ...DEFAULT_FALLBACK[preferred]];
     const maxRetries = options?.maxRetries ?? 1;
 
@@ -81,7 +96,7 @@ export class AIGateway {
           return result.object;
         } catch (err) {
           lastError = err instanceof Error ? err : new Error(String(err));
-          console.warn(`Provider ${provider} failed (attempt ${attempt + 1}):`, lastError.message);
+          console.warn("Provider %s failed (attempt %d):", provider, attempt + 1, lastError.message);
         }
       }
     }
@@ -90,23 +105,23 @@ export class AIGateway {
   }
 
   async generateEmbedding(text: string): Promise<number[]> {
-    // Use Ollama for embeddings too
-    const ollama = createOpenAI({ baseURL: `${OLLAMA_BASE_URL}/v1`, apiKey: "ollama" });
-    const model = ollama.textEmbeddingModel(OLLAMA_MODEL);
-
-    try {
-      const result = await embed({ model, value: text });
-      await this.logUsage("embedding", "ollama", OLLAMA_MODEL, {
-        input: text.length,
-        output: 0,
-      });
-      return result.embedding;
-    } catch {
-      // If Ollama embedding fails, generate a simple hash-based pseudo-embedding
-      // This allows the app to work without a dedicated embedding model
-      console.warn("Ollama embedding failed, using fallback pseudo-embedding");
-      return this.pseudoEmbed(text);
+    // Use Ollama for embeddings when available, otherwise fall back to pseudo-embed
+    if (isOllamaConfigured) {
+      try {
+        const ollama = createOpenAI({ baseURL: `${OLLAMA_BASE_URL}/v1`, apiKey: "ollama" });
+        const model = ollama.textEmbeddingModel(OLLAMA_MODEL);
+        const result = await embed({ model, value: text });
+        await this.logUsage("embedding", "ollama", OLLAMA_MODEL, {
+          input: text.length,
+          output: 0,
+        });
+        return result.embedding;
+      } catch {
+        console.warn("Ollama embedding failed, using fallback pseudo-embedding");
+      }
     }
+    // Deterministic pseudo-embedding works well enough for candidate retrieval
+    return this.pseudoEmbed(text);
   }
 
   private pseudoEmbed(text: string): number[] {
@@ -151,7 +166,7 @@ export class AIGateway {
         inputTokens: tokens.input,
         outputTokens: tokens.output,
         costCents,
-        createdAt: new Date(),
+        createdAt: new Date().toISOString(),
       });
     } catch {
       // Usage logging is best-effort

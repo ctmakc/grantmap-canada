@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "matchId required" }, { status: 400 });
     }
 
-    const result = db.select().from(drafts).where(eq(drafts.matchId, matchId)).all();
+    const result = await db.select().from(drafts).where(eq(drafts.matchId, matchId));
     return NextResponse.json(result);
   } catch (err) {
     return NextResponse.json({ error: String(err) }, { status: 500 });

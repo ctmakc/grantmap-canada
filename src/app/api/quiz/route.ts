@@ -44,9 +44,7 @@ For each, give a realistic eligibility score (0-100), expected funding range, an
 
 End with a 2-3 sentence summary and 3 actionable next steps.`;
 
-    const result = await gateway.generateObject(QuizResultSchema, prompt, {
-      preferredProvider: "ollama",
-    });
+    const result = await gateway.generateObject(QuizResultSchema, prompt);
 
     return NextResponse.json(result);
   } catch (err) {

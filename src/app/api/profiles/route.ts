@@ -17,10 +17,10 @@ export async function POST(req: NextRequest) {
 
     await db.insert(profiles).values({
       id: profileId,
-      rawData,
+      rawData: typeof rawData === "string" ? rawData : JSON.stringify(rawData),
       structuredProfile: null,
       status: "raw",
-      createdAt: new Date(),
+      createdAt: new Date().toISOString(),
     });
 
     // Trigger matching pipeline in background
@@ -44,9 +44,9 @@ export async function GET(req: NextRequest) {
 
     let result;
     if (clientId) {
-      result = db.select().from(profiles).where(eq(profiles.clientId, clientId)).all();
+      result = await db.select().from(profiles).where(eq(profiles.clientId, clientId));
     } else {
-      result = db.select().from(profiles).all();
+      result = await db.select().from(profiles);
     }
 
     return NextResponse.json(result);

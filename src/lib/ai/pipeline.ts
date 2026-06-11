@@ -66,9 +66,7 @@ Rules:
 - Infer rdActivity from industry/sector if not specified (tech/manufacturing with R&D mention = true)
 - Infer exportActivity if not specified (default false)`;
 
-    return this.gateway.generateObject(CompanyProfileSchema, prompt, {
-      preferredProvider: "openai",
-    });
+    return this.gateway.generateObject(CompanyProfileSchema, prompt);
   }
 
   private async retrieveCandidates(profile: CompanyProfile): Promise<string[]> {
@@ -109,8 +107,7 @@ Return ONLY programs where eligibilityScore >= 30, sorted by score descending.`;
 
     const result = await this.gateway.generateObject(
       z.array(GrantMatchSchema),
-      prompt,
-      { preferredProvider: "anthropic" }
+      prompt
     );
 
     return result.sort((a, b) => b.eligibilityScore - a.eligibilityScore);
@@ -141,9 +138,7 @@ Guidelines:
 - Use Canadian English spelling
 - Each section should be 150-300 words`;
 
-      const draft = await this.gateway.generateObject(ApplicationDraftSchema, prompt, {
-        preferredProvider: "anthropic",
-      });
+      const draft = await this.gateway.generateObject(ApplicationDraftSchema, prompt);
 
       draft.programId = match.programId;
       draft.programName = match.programName;

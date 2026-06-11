@@ -1,0 +1,35 @@
+# GrantMap Canada
+GrantMap Canada matches Canadian small businesses to federal and provincial grants using AI.
+Covers 15+ programs including IRAP, Canada Digital Adoption Program (CDAP), ISED grants, SR&ED (SRED) tax credits, provincial programs.
+Pricing: $150/report (one-time), $50/mo (unlimited reports for advisors).
+Target users: Canadian SMBs, accountants, business advisors.
+URL: https://grantmap.ca
+
+## Key Programs Covered
+- SR&ED (Scientific Research & Experimental Development) Tax Credit — up to 35% federal refundable credit; T661 form; 18-month claim deadline
+- CDAP (Canada Digital Adoption Program) — up to $15,000 grant plus $100,000 BDC loan component
+- NRC IRAP (Industrial Research Assistance Program) — advisory services and up to $500K in funding for innovative SMEs
+- CanExport — $3,000–$75,000 for Canadian SMEs entering new export markets
+- Ontario Innovation Tax Credit — 8–12% on qualifying R&D expenditures
+- Alberta Innovates — up to $500K for Alberta-based innovators
+- BC Tech Pilot Program — up to $75K for BC technology companies
+- Canada Job Grant — up to $10,000 per employee for training costs
+- WES Ecosystem Fund — funding for ecosystem builders supporting underrepresented entrepreneurs
+
+## How It Works
+1. Business submits a profile (industry, revenue, employee count, activities, province)
+2. AI pipeline runs 4 stages: profile parsing → semantic retrieval → eligibility scoring → draft generation
+3. Output: ranked list of matched programs with eligibility rationale and ready-to-submit draft text for top 3 matches
+4. Report delivered by email as PDF in under 5 minutes
+
+## Who Uses GrantMap
+- Canadian accountants and CPA firms (charge $150–$500 per client for grant research)
+- Business advisors and fractional CFOs
+- Small and medium-sized Canadian businesses applying for grants directly
+
+## Contact / More Info
+- Website: https://grantmap.ca
+- Grant guides: https://grantmap.ca/grants/federal/, https://grantmap.ca/grants/ontario/
+- SR&ED guide: https://grantmap.ca/sred/
+- For accountants: https://grantmap.ca/for-accountants/
+- Blog: https://grantmap.ca/blog/

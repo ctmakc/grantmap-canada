@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
       await db
         .update(profiles)
         .set({
-          structuredProfile: state.enrichedProfile,
+          structuredProfile: JSON.stringify(state.enrichedProfile),
           status: state.drafts ? "drafted" : state.matches ? "matched" : "enriched",
         })
         .where(eq(profiles.id, profileId));
@@ -42,8 +42,8 @@ export async function POST(req: NextRequest) {
             expectedAmountMax: match.expectedAmountMax,
             complexity: match.complexity,
             deadline: match.deadline,
-            reasoning: match.reasoning,
-            createdAt: new Date(),
+            reasoning: JSON.stringify(match.reasoning),
+            createdAt: new Date().toISOString(),
           });
         } catch {
           // Match insert is best-effort
@@ -75,7 +75,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "profileId required" }, { status: 400 });
     }
 
-    const result = db.select().from(matches).where(eq(matches.profileId, profileId)).all();
+    const result = await db.select().from(matches).where(eq(matches.profileId, profileId));
     return NextResponse.json({ matches: result });
   } catch (err) {
     return NextResponse.json({ error: String(err) }, { status: 500 });
