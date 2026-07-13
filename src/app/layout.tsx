@@ -29,11 +29,13 @@ export const metadata: Metadata = {
     title: "GrantMap Canada — AI Grant Matching for Canadian Businesses",
     description:
       "AI-powered grant matching for Canadian small businesses. Find SR&ED, CDAP, IRAP, and 15+ federal & provincial programs in minutes.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "GrantMap Canada — AI Grant Matching",
     description: "Find every Canadian grant your business qualifies for.",
+    images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
 };

@@ -162,6 +162,7 @@ export default function LandingPage() {
             <div className="text-sm text-slate-500 mt-1">Time to Report</div>
           </div>
         </div>
+        <img src="/hero-dashboard.png" alt="GrantMap dashboard" className="mt-16 mx-auto rounded-2xl border border-slate-800 shadow-2xl w-full max-w-4xl" />
       </section>
 
       {/* Features */}
@@ -181,6 +182,7 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
+        <img src="/how-it-works.png" alt="4-stage AI pipeline" className="mx-auto mt-10 w-full max-w-3xl rounded-xl" />
       </section>
 
       {/* Programs grid */}
