@@ -262,6 +262,17 @@ export default function ForAccountantsPage() {
           <span>GrantMap Canada — AI Grant Intelligence</span>
           <Link href="/" className="hover:text-slate-400">Home</Link>
         </div>
+        {/* Agency credit — house standard */}
+        <div style={{ width: "100%", textAlign: "center", padding: "20px 24px 0" }}>
+          <a
+            href="https://mmix.ua/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontSize: 12.5, lineHeight: 1.5, color: "inherit", opacity: 0.6, textDecoration: "none" }}
+          >
+            Development & promotion — Marketing Mix
+          </a>
+        </div>
       </footer>
     </div>
   );
