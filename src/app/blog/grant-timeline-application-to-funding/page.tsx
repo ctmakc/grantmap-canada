@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Canadian Grant Timeline: From Application to Cash in Your Account",
     description:
       "Real timelines for IRAP, CDAP, SR&ED, CanExport, and other Canadian grant programs — plus cash flow strategies while you wait.",
+  
+    images: [{ url: "/images/blog/cat-guide-og.png", width: 1200, height: 630 }],
   },
 };
 

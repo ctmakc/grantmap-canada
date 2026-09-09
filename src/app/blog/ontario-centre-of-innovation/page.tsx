@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Ontario Centre of Innovation (OCI): Programs for Ontario Tech Companies",
     description:
       "OCI vouchers up to $25K, market readiness programs, and how Ontario tech companies can access innovation funding.",
+  
+    images: [{ url: "/images/blog/cat-provincial-og.png", width: 1200, height: 630 }],
   },
 };
 

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "NRC IRAP Grant: How to Apply and What Qualifies (2026)",
     description:
       "Everything about Canada's most impactful innovation grant: eligibility, amounts up to $500K, how to apply through an Industrial Technology Advisor.",
+  
+    images: [{ url: "/images/blog/cat-federal-og.png", width: 1200, height: 630 }],
   },
 };
 

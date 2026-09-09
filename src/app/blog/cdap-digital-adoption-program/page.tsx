@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Canada Digital Adoption Program (CDAP): Is Your Business Eligible?",
     description:
       "CDAP offers eligible Canadian businesses up to $15,000 for a digital adoption plan plus access to a $100,000 BDC loan. Learn if you qualify.",
+  
+    images: [{ url: "/images/blog/cat-federal-og.png", width: 1200, height: 630 }],
   },
 };
 

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Ontario Innovation Tax Credit (OITC): What IT Companies Need to Know",
     description:
       "OITC gives Ontario companies an 8% credit on eligible R&D stacked on top of federal SR&ED. Here is how to claim it correctly.",
+  
+    images: [{ url: "/images/blog/cat-sredtax-og.png", width: 1200, height: 630 }],
   },
 };
 

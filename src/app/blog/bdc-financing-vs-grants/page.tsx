@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "BDC Loans vs Canadian Business Grants: Which Is Right for Your Business?",
     description:
       "Grants are free money; BDC loans you repay. Here is when each makes sense and how to use both together.",
+  
+    images: [{ url: "/images/blog/cat-strategy-og.png", width: 1200, height: 630 }],
   },
 };
 

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Grants for Indigenous-Owned Businesses in Canada: Full 2026 Guide",
     description:
       "Complete guide to Indigenous business funding in Canada: ABES, NACCA, provincial programs, and stacking strategies.",
+  
+    images: [{ url: "/images/blog/cat-sector-og.png", width: 1200, height: 630 }],
   },
 };
 

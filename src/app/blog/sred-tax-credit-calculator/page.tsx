@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "SR&ED Tax Credit Calculator: Estimate Your Refund (2026)",
     description:
       "Worked examples for estimating your SR&ED refund. CCPC 35% vs 15% non-refundable, Ontario top-up, and overhead proxy calculation.",
+  
+    images: [{ url: "/images/blog/cat-sredtax-og.png", width: 1200, height: 630 }],
   },
 };
 

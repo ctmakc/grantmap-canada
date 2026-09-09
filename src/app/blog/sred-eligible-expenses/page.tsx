@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "SR&ED Eligible Expenses: What Qualifies and What Doesn't (2026 Guide)",
     description:
       "Salary/wages 100%, subcontractors 80%, overhead proxy, capital excluded — the complete guide to SR&ED eligible expenses with worked examples.",
+  
+    images: [{ url: "/images/blog/cat-sredtax-og.png", width: 1200, height: 630 }],
   },
 };
 

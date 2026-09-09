@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Should You Hire a Grant Writer or Use AI? Honest Comparison for Canadian SMBs",
     description:
       "Grant writer costs vs AI tools — when each is the right choice for Canadian small businesses applying for government grants.",
+  
+    images: [{ url: "/images/blog/cat-strategy-og.png", width: 1200, height: 630 }],
   },
 };
 

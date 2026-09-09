@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "How to Write a Winning Canadian Grant Application (Template + Tips)",
     description:
       "A practical guide to writing strong Canadian grant applications — with templates for each section and the most common mistakes to avoid.",
+  
+    images: [{ url: "/images/blog/cat-guide-og.png", width: 1200, height: 630 }],
   },
 };
 

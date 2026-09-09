@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Mitacs Funding: How to Get Paid Research Partnerships at Canadian Universities",
     description:
       "Mitacs Accelerate internships, Elevate fellowships, industry partner contribution amounts, and how to access university research for your business.",
+  
+    images: [{ url: "/images/blog/cat-sector-og.png", width: 1200, height: 630 }],
   },
 };
 

@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Canada's Innovation Superclusters: Funding for Tech and Industrial Companies",
     description:
       "How Canada's 5 superclusters work, who can join, project grant sizes, and how to access funding through each cluster.",
+  
+    images: [{ url: "/images/blog/cat-federal-og.png", width: 1200, height: 630 }],
   },
 };
 

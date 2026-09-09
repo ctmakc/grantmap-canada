@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "BC Small Business Grants and Funding Programs in 2026",
     description:
       "All major BC business grants in one place: InBC, BCTECH, CleanBC, regional programs, and how to stack them with federal funding.",
+  
+    images: [{ url: "/images/blog/cat-provincial-og.png", width: 1200, height: 630 }],
   },
 };
 

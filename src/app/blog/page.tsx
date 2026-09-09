@@ -18,6 +18,7 @@ const POSTS = [
     readTime: "12 min",
     tag: "Guide",
     tagColor: "blue",
+    image: "/images/blog/cat-guide-thumb.png",
   },
   {
     slug: "irap-grant-guide",
@@ -28,6 +29,7 @@ const POSTS = [
     readTime: "8 min",
     tag: "Federal",
     tagColor: "violet",
+    image: "/images/blog/cat-federal-thumb.png",
   },
   {
     slug: "cdap-digital-adoption-program",
@@ -38,6 +40,7 @@ const POSTS = [
     readTime: "7 min",
     tag: "Federal",
     tagColor: "violet",
+    image: "/images/blog/cat-federal-thumb.png",
   },
   {
     slug: "sred-tax-credit-calculator",
@@ -48,6 +51,7 @@ const POSTS = [
     readTime: "6 min",
     tag: "Tax Credit",
     tagColor: "fuchsia",
+    image: "/images/blog/cat-sredtax-thumb.png",
   },
   {
     slug: "stacking-grants-canada-guide",
@@ -58,6 +62,7 @@ const POSTS = [
     readTime: "9 min",
     tag: "Strategy",
     tagColor: "emerald",
+    image: "/images/blog/cat-strategy-thumb.png",
   },
   {
     slug: "sred-eligible-expenses",
@@ -68,6 +73,7 @@ const POSTS = [
     readTime: "9 min",
     tag: "SR&ED",
     tagColor: "fuchsia",
+    image: "/images/blog/cat-sredtax-thumb.png",
   },
   {
     slug: "how-to-write-grant-application",
@@ -78,6 +84,7 @@ const POSTS = [
     readTime: "10 min",
     tag: "Grant Writing",
     tagColor: "blue",
+    image: "/images/blog/cat-guide-thumb.png",
   },
   {
     slug: "common-grant-application-mistakes",
@@ -88,6 +95,7 @@ const POSTS = [
     readTime: "9 min",
     tag: "Grant Writing",
     tagColor: "blue",
+    image: "/images/blog/cat-guide-thumb.png",
   },
   {
     slug: "ontario-innovation-tax-credit",
@@ -98,6 +106,7 @@ const POSTS = [
     readTime: "7 min",
     tag: "Tax Credit",
     tagColor: "fuchsia",
+    image: "/images/blog/cat-sredtax-thumb.png",
   },
   {
     slug: "alberta-innovation-employment-grant",
@@ -108,6 +117,7 @@ const POSTS = [
     readTime: "8 min",
     tag: "Provincial",
     tagColor: "orange",
+    image: "/images/blog/cat-provincial-thumb.png",
   },
   {
     slug: "bc-small-business-grants-2026",
@@ -118,6 +128,7 @@ const POSTS = [
     readTime: "10 min",
     tag: "Provincial",
     tagColor: "blue",
+    image: "/images/blog/cat-provincial-thumb.png",
   },
   {
     slug: "grant-timeline-application-to-funding",
@@ -128,6 +139,7 @@ const POSTS = [
     readTime: "8 min",
     tag: "Planning",
     tagColor: "blue",
+    image: "/images/blog/cat-guide-thumb.png",
   },
   {
     slug: "women-entrepreneurship-fund-canada",
@@ -138,6 +150,7 @@ const POSTS = [
     readTime: "8 min",
     tag: "Federal",
     tagColor: "violet",
+    image: "/images/blog/cat-federal-thumb.png",
   },
   {
     slug: "bdc-financing-vs-grants",
@@ -148,6 +161,7 @@ const POSTS = [
     readTime: "8 min",
     tag: "Guide",
     tagColor: "blue",
+    image: "/images/blog/cat-strategy-thumb.png",
   },
   {
     slug: "canexport-program-exporters",
@@ -158,6 +172,7 @@ const POSTS = [
     readTime: "7 min",
     tag: "Federal",
     tagColor: "violet",
+    image: "/images/blog/cat-federal-thumb.png",
   },
   {
     slug: "hire-grant-writer-vs-ai",
@@ -168,6 +183,7 @@ const POSTS = [
     readTime: "8 min",
     tag: "Strategy",
     tagColor: "blue",
+    image: "/images/blog/cat-strategy-thumb.png",
   },
   {
     slug: "clean-technology-grants-canada",
@@ -178,6 +194,7 @@ const POSTS = [
     readTime: "10 min",
     tag: "Clean Tech",
     tagColor: "emerald",
+    image: "/images/blog/cat-sector-thumb.png",
   },
   {
     slug: "innovation-superclusters-program",
@@ -188,6 +205,7 @@ const POSTS = [
     readTime: "9 min",
     tag: "Federal",
     tagColor: "violet",
+    image: "/images/blog/cat-federal-thumb.png",
   },
   {
     slug: "mitacs-funding-research",
@@ -198,6 +216,7 @@ const POSTS = [
     readTime: "8 min",
     tag: "Research",
     tagColor: "violet",
+    image: "/images/blog/cat-sector-thumb.png",
   },
   {
     slug: "indigenous-business-grants-canada",
@@ -208,6 +227,7 @@ const POSTS = [
     readTime: "9 min",
     tag: "Federal + Provincial",
     tagColor: "emerald",
+    image: "/images/blog/cat-sector-thumb.png",
   },
   {
     slug: "futurpreneur-canada-guide",
@@ -218,6 +238,7 @@ const POSTS = [
     readTime: "7 min",
     tag: "Federal",
     tagColor: "blue",
+    image: "/images/blog/cat-federal-thumb.png",
   },
   {
     slug: "agri-innovate-program",
@@ -228,6 +249,7 @@ const POSTS = [
     readTime: "8 min",
     tag: "Agriculture",
     tagColor: "emerald",
+    image: "/images/blog/cat-sector-thumb.png",
   },
   {
     slug: "ontario-centre-of-innovation",
@@ -238,6 +260,7 @@ const POSTS = [
     readTime: "7 min",
     tag: "Ontario",
     tagColor: "blue",
+    image: "/images/blog/cat-provincial-thumb.png",
   },
   {
     slug: "export-development-canada-programs",
@@ -248,6 +271,7 @@ const POSTS = [
     readTime: "8 min",
     tag: "Financing",
     tagColor: "blue",
+    image: "/images/blog/cat-strategy-thumb.png",
   },
 ];
 
@@ -287,19 +311,32 @@ export default function BlogIndexPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}/`}
-              className="block glass rounded-2xl p-7 hover:border-blue-500/30 transition-colors group"
+              className="flex flex-col sm:flex-row gap-0 sm:gap-6 glass rounded-2xl overflow-hidden hover:border-blue-500/30 transition-colors group"
             >
-              <div className="flex items-start justify-between gap-4 mb-3">
-                <div>
-                  <span className={`text-xs px-2 py-0.5 rounded-full bg-${post.tagColor}-500/10 border border-${post.tagColor}-500/20 text-${post.tagColor}-400 font-medium`}>
-                    {post.tag}
-                  </span>
+              {post.image && (
+                <div className="relative w-full sm:w-56 shrink-0 aspect-[16/9] sm:aspect-auto">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={post.image}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="text-xs text-slate-500">{post.date} · {post.readTime} read</div>
+              )}
+              <div className="p-7 sm:pl-0 flex-1">
+                <div className="flex items-start justify-between gap-4 mb-3">
+                  <div>
+                    <span className={`text-xs px-2 py-0.5 rounded-full bg-${post.tagColor}-500/10 border border-${post.tagColor}-500/20 text-${post.tagColor}-400 font-medium`}>
+                      {post.tag}
+                    </span>
+                  </div>
+                  <div className="text-xs text-slate-500">{post.date} · {post.readTime} read</div>
+                </div>
+                <h2 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">{post.title}</h2>
+                <p className="text-slate-400 text-sm leading-relaxed">{post.excerpt}</p>
+                <div className="mt-4 text-blue-400 text-sm font-medium">Read more →</div>
               </div>
-              <h2 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">{post.title}</h2>
-              <p className="text-slate-400 text-sm leading-relaxed">{post.excerpt}</p>
-              <div className="mt-4 text-blue-400 text-sm font-medium">Read more →</div>
             </Link>
           ))}
         </div>

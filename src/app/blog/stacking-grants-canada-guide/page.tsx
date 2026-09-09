@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Grant Stacking in Canada: How to Combine Multiple Programs for Maximum Funding",
     description:
       "Federal + provincial + municipal stacking rules, real example with $275K combined, and what you cannot stack — the complete guide.",
+  
+    images: [{ url: "/images/blog/cat-strategy-og.png", width: 1200, height: 630 }],
   },
 };
 

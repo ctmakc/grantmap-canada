@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Women Entrepreneurship Fund Canada: How to Apply and Qualify",
     description:
       "Full guide to WEF Canada: who qualifies, what expenses are covered ($20K–$100K), the WE Fund stream, and tips for scoring a strong application.",
+  
+    images: [{ url: "/images/blog/cat-federal-og.png", width: 1200, height: 630 }],
   },
 };
 

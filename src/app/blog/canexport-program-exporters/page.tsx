@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "CanExport Program: Free Money for Canadian Exporters (Up to $75,000)",
     description:
       "CanExport covers 75% of your export market development costs up to $75K, non-repayably. Here is how to qualify and apply.",
+  
+    images: [{ url: "/images/blog/cat-federal-og.png", width: 1200, height: 630 }],
   },
 };
 

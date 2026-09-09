@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Clean Technology Grants and Funding in Canada: 2026 Directory",
     description:
       "Every major federal and provincial clean tech grant in Canada — Net Zero Accelerator, SIF, NRCan, CleanBC, and more.",
+  
+    images: [{ url: "/images/blog/cat-sector-og.png", width: 1200, height: 630 }],
   },
 };
 

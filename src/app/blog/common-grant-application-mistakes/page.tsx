@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "10 Grant Application Mistakes That Get Canadian Businesses Rejected",
     description:
       "Avoid these 10 mistakes that cause Canadian grant applications to fail — from missing eligibility proof to late submissions.",
+  
+    images: [{ url: "/images/blog/cat-guide-og.png", width: 1200, height: 630 }],
   },
 };
 

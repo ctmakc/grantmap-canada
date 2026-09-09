@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Export Development Canada (EDC): Financing for Canadian Exporters",
     description:
       "EDC is not a grant program — it offers loans, insurance, and guarantees. Here is what Canadian exporters need to know to use EDC financing.",
+  
+    images: [{ url: "/images/blog/cat-strategy-og.png", width: 1200, height: 630 }],
   },
 };
 

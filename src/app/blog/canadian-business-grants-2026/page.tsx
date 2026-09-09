@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Complete Guide to Canadian Business Grants in 2026",
     description:
       "Federal vs provincial grants, application tips, stacking strategies, and the most common mistakes that cost Canadian businesses funding.",
+  
+    images: [{ url: "/images/blog/cat-guide-og.png", width: 1200, height: 630 }],
   },
 };
 

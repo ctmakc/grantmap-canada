@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Futurpreneur Canada: Funding and Mentorship for Young Entrepreneurs",
     description:
       "Up to $60K in combined Futurpreneur + BDC financing for Canadian entrepreneurs aged 18–39. Mentorship is mandatory. Here is everything you need to know.",
+  
+    images: [{ url: "/images/blog/cat-federal-og.png", width: 1200, height: 630 }],
   },
 };
 

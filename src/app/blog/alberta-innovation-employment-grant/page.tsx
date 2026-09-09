@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "Alberta Innovation Employment Grant (IEG): Complete 2026 Guide",
     description:
       "Everything Alberta tech companies need to know about the IEG: 20% payroll credit on qualifying employees, eligible activities, and how to claim.",
+  
+    images: [{ url: "/images/blog/cat-provincial-og.png", width: 1200, height: 630 }],
   },
 };
 

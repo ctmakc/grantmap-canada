@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     title: "AgriInnovate Program: Grants for Canadian Food and Agriculture Businesses",
     description:
       "AgriInnovate offers 50% cost-share up to $10M for Canadian agri-food processing and commercialisation. Here is how to qualify and apply.",
+  
+    images: [{ url: "/images/blog/cat-sector-og.png", width: 1200, height: 630 }],
   },
 };
 
